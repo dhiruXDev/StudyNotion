@@ -56,113 +56,112 @@ export const Navbar = () => {
      return (
       <>
        <div className="w-full h-16 md:h-14 flex items-center bg-richblack-800 border-b-[1.5px] border-richblack-700">
-         <div className=" w-full md:w-11/12 max-w-maxContent mx-auto flex md:px-8  px-5   justify-between items-center">
-           <Link to="/">
-             <img src={logo} loading="lazy" height={120} width={140} alt="Logo" />
-           </Link>
-           <nav className="!hidden md:!flex ">
-             <ul className="flex space-x-4 text-richblack-25">
-               {NavbarLinks.map((links, index) => {
-                 const isCatalog = links.title === 'Catalog';
-   
-                 return (
-                   <li
-                     key={index}
-                     className="flex items-center gap-x-1 text-[16px] leading-[24px] font-inter font-[400]"
-                   >
-                     {isCatalog ? (
-                       <div
-                         className={`flex items-center gap-x-1 ${
-                           shouldHighlightCatalog
-                             ? 'text-yellow-50'
-                             : 'text-richblack-5'
-                         } hover:text-richblack-200 duration-300 cursor-pointer group`}
-                       >
-                         <p>{links.title}</p>
-                         <FaChevronDown className="text-[12px] leading-3 top-[3px]" />
-                         {/* Dropdown menu */}
-                         <div className="invisible absolute left-[52%] top-[0.5%] z-30 flex w-[200px] translate-x-[-50%] translate-y-[3em] flex-col rounded-lg bg-richblack-5 p-4 text-richblack-900 opacity-0 transition-all duration-200 group-hover:visible overflow-visible group-hover:translate-y-[1.65em] group-hover:opacity-100 lg:w-[200px]">
-                           <div className="absolute bg-richblack-5 h-6 w-6 rounded rotate-45 translate-x-[25%] translate-y-[-90%] left-[10%] -z-10"></div>
-                           {loading ? (
-                             <div>Loading...</div>
-                           ) : (
-                             subLinks.map((Element, idx) => (
-                               <Link
-                                 to={`/catalog/${Element.name
-                                   .split(' ')
-                                   .join('-')
-                                   .toLowerCase()}`}
-                                 key={idx}
-                               >
-                                 <p className="text-[14px] text-black bg-transparent hover:bg-richblack-200 py-2 px-3 font-inter font-[500] rounded-md">
-                                   {Element.name}
-                                 </p>
-                               </Link>
-                             ))
-                           )}
-                         </div>
-                       </div>
-                     ) : (
-                       <Link to={links.path}>
-                         <p
-                           className={`${
-                             matchRoute(links.path)
-                               ? 'text-yellow-50'
-                               : 'text-richblack-5'
-                           } hover:text-richblack-200 duration-300`}
-                         >
-                           {links.title}
-                         </p>
-                       </Link>
-                     )}
-                   </li>
-                 );
-               })}
-             </ul>
-           </nav>
-           
-           {/* Login / SignUp / Dashboard */}
-           <div className=" flex base:!ml-5 gap-x-4 items-center ">
-             {user && user.accountType !== 'Instructor' && (
-               <Link to="/dashboard/cart" className="relative pl-10 py-2">
-                 <AiOutlineShoppingCart className="text-3xl text-richblack-25 hover:text-richblack-300 duration-200 transition-all" />
-                 {totalItem > 0 && (
-                   <div className="absolute top-1.5 left-[36%] h-6 w-6 p-1 bg-caribbeangreen-400 text-richblack-900 rounded-full flex items-center justify-center animate-bounce">
-                     <span className="text-xs font-semibold">{totalItem}</span>
-                   </div>
-                 )}
-               </Link>
-             )}
-             {token === null && (
-               <>
-                 <Link 
-                     to="/logIn" className="  md:text-sm text-richblack-100 bg-richblack-800 border-2 border-richblack-700 px-3 py-1 rounded-md font-inter font-medium text-xs hover:bg-richblack-700 transition-all duration-200"
-                  >
-                   Log In
-                 </Link>
-                 <Link
-                   to="/signUp"
-                   className=" hidden md:!flex  md:text-sm text-richblack-100 bg-richblack-800 border-2 border-richblack-700 px-3 py-1 rounded-md font-inter font-medium text-xs hover:bg-richblack-700 transition-all duration-200"
-                 >
-                   Sign Up
-                 </Link>
-               </>
-             )}
-             {token !== null && <ProfileDropDown />}
-             <div className=' md:!hidden  !flex '>
-                  {
-                    !isMenuVisible&& <HiMenuAlt3 onClick={()=>{setIsMenuVisible(true) ; setIsCatalogDropDownVisible(false)}} className=' animate-open-menu  text-richblack-300 text-2xl cursor-pointer  hover:text-richblack-500 duration-300 transition-all ' />               
-                  }  
-                 {
-                    isMenuVisible && <RxCross2 onClick={()=>{ setIsanimation(true); setTimeout(()=>{
-                      setIsMenuVisible(false);
-                      setIsanimation(false);
-                    } , 500)}} className=' animate-open-menu text-richblack-300 text-2xl cursor-pointer      hover:text-richblack-500 duration-100 transition-all ' />
-                 } 
-           </div>
-           </div>
-          
-         </div>
+            <div className=" w-full md:w-11/12 max-w-maxContent mx-auto flex md:px-8  px-5   justify-between items-center ">
+                      <Link to="/">
+                        <img src={logo} loading="lazy" height={120} width={140} alt="Logo" />
+                      </Link>
+                      <nav className="!hidden md:!flex ">
+                        <ul className="flex space-x-4 text-richblack-25">
+                          {NavbarLinks.map((links, index) => {
+                            const isCatalog = links.title === 'Catalog';
+              
+                            return (
+                              <li
+                                key={index}
+                                className="flex items-center gap-x-1 text-[16px] leading-[24px] font-inter font-[400]"
+                              >
+                                {isCatalog ? (
+                                  <div
+                                    className={`flex items-center gap-x-1 ${
+                                      shouldHighlightCatalog
+                                        ? 'text-yellow-50'
+                                        : 'text-richblack-5'
+                                    } hover:text-richblack-200 duration-300 cursor-pointer group`}
+                                  >
+                                    <p>{links.title}</p>
+                                    <FaChevronDown className="text-[12px] leading-3 top-[3px]" />
+                                    {/* Dropdown menu */}
+                                    <div className="invisible absolute left-[52%] top-[0.5%] z-30 flex w-[200px] translate-x-[-50%] translate-y-[3em] flex-col rounded-lg bg-richblack-5 p-4 text-richblack-900 opacity-0 transition-all duration-200 group-hover:visible overflow-visible group-hover:translate-y-[1.65em] group-hover:opacity-100 lg:w-[200px]">
+                                      <div className="absolute bg-richblack-5 h-6 w-6 rounded rotate-45 translate-x-[25%] translate-y-[-90%] left-[10%] -z-10"></div>
+                                      {loading ? (
+                                        <div>Loading...</div>
+                                      ) : (
+                                        subLinks.map((Element, idx) => (
+                                          <Link
+                                            to={`/catalog/${Element.name
+                                              .split(' ')
+                                              .join('-')
+                                              .toLowerCase()}`}
+                                            key={idx}
+                                          >
+                                            <p className="text-[14px] text-black bg-transparent hover:bg-richblack-200 py-2 px-3 font-inter font-[500] rounded-md">
+                                              {Element.name}
+                                            </p>
+                                          </Link>
+                                        ))
+                                      )}
+                                    </div>
+                                  </div>
+                                ) : (
+                                  <Link to={links.path}>
+                                    <p
+                                      className={`${
+                                        matchRoute(links.path)
+                                          ? 'text-yellow-50'
+                                          : 'text-richblack-5'
+                                      } hover:text-richblack-200 duration-300`}
+                                    >
+                                      {links.title}
+                                    </p>
+                                  </Link>
+                                )}
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      </nav>
+                      
+                      {/* Login / SignUp / Dashboard */}
+                      <div className=" flex base:!ml-5 gap-x-4 items-center ">
+                        {user && user.accountType !== 'Instructor' && (
+                          <Link to="/dashboard/cart" className="relative pl-10 py-2">
+                            <AiOutlineShoppingCart className="text-3xl text-richblack-25 hover:text-richblack-300 duration-200 transition-all" />
+                            {totalItem > 0 && (
+                              <div className="absolute top-1.5 left-[36%] h-6 w-6 p-1 bg-caribbeangreen-400 text-richblack-900 rounded-full flex items-center justify-center animate-bounce">
+                                <span className="text-xs font-semibold">{totalItem}</span>
+                              </div>
+                            )}
+                          </Link>
+                        )}
+                        {token === null && (
+                          <>
+                            <Link 
+                                to="/logIn" className="  md:text-sm text-richblack-100 bg-richblack-800 border-2 border-richblack-700 px-3 py-1 rounded-md font-inter font-medium text-xs hover:bg-richblack-700 transition-all duration-200"
+                              >
+                              Log In
+                            </Link>
+                            <Link
+                              to="/signUp"
+                              className=" hidden md:!flex  md:text-sm text-richblack-100 bg-richblack-800 border-2 border-richblack-700 px-3 py-1 rounded-md font-inter font-medium text-xs hover:bg-richblack-700 transition-all duration-200"
+                            >
+                              Sign Up
+                            </Link>
+                          </>
+                        )}
+                        {token !== null && <ProfileDropDown />}
+                        <div className=' md:!hidden  !flex '>
+                              {
+                                !isMenuVisible&& <HiMenuAlt3 onClick={()=>{setIsMenuVisible(true) ; setIsCatalogDropDownVisible(false)}} className=' animate-open-menu  text-richblack-300 text-2xl cursor-pointer  hover:text-richblack-500 duration-300 transition-all ' />               
+                              }  
+                            {
+                                isMenuVisible && <RxCross2 onClick={()=>{ setIsanimation(true); setTimeout(()=>{
+                                  setIsMenuVisible(false);
+                                  setIsanimation(false);
+                                } , 500)}} className=' animate-open-menu text-richblack-300 text-2xl cursor-pointer      hover:text-richblack-500 duration-100 transition-all ' />
+                            } 
+                      </div>
+                      </div>
+            </div>
        </div>
               {
                   isMenuVisible && 

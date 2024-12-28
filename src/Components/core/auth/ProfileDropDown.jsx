@@ -23,15 +23,15 @@ export const ProfileDropDown = () => {
    }
 
   return (
-          <button onClick={()=>setOpen(true)} className='  '>
-          <div className=' flex items-center gap-x-1   '>
-              <img src={user?.image} alt={`Profile-${user?.firstName}`  }  title= {`${user?.firstName}` }  className="aspect-square w-[30px] rounded-full object-cover"/>
-              <AiOutlineCaretDown className="text-sm text-richblack-100" />
-          </div>
+          <button onClick={()=>setOpen(true)} className=''>
+              <div className=' flex items-center gap-x-1   '>
+                  <img src={user?.image} alt={`Profile-${user?.firstName}`  }  title= {`${user?.firstName}` }  className="aspect-square w-[30px] rounded-full object-cover"/>
+                  <AiOutlineCaretDown className="text-sm text-richblack-100" />
+              </div>
           {open && (
                   <div
                     onClick={(e) => e.stopPropagation()}
-                    className="absolute  top-[0.8%]   right-[5%] md:top-[4%] md:right-[6%] z-[10000] divide-y-[1px] divide-richblack-700   rounded-md border-[1px] border-richblack-700 bg-richblack-800"
+                    className="absolute  top-[0.8%]   right-[5%] md:!top-[1%] md:right-[6%] z-[10000] divide-y-[1px] divide-richblack-700   rounded-md border-[1px] border-richblack-700 bg-richblack-800"
                     ref={ref}
                   > 
                     <Link to="/dashboard/my-profile" onClick={() => setOpen(false)}>
@@ -52,7 +52,8 @@ export const ProfileDropDown = () => {
                     </div>
                   </div>
                 )}
-  </button> 
+          
+          </button> 
  
       
      

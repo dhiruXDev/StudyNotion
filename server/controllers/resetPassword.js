@@ -1,11 +1,11 @@
 const User = require("../models/User");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const { response } = require("express");
 const mailSender = require("../utils/mailSender");
 const passwordUpdated = require("../mail/templates/PasswordUpdate")
 //reset Pasword Token(Visiting the FrontEnd for reseting teh Password and generating Token )
   exports.resetPasswordToken = async(req , res)=>{
-    try {    
+    try {              
            // get email 
            const email = req.body.email;
            // Validate the email , if it will not present 
