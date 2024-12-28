@@ -35,8 +35,8 @@ export const PasswordChange = () => {
   return (
     <form onSubmit={handleSubmit(updatePasswordHandler)} className=' lg:w-[60%] relative flex  flex-col gap-y-4 mt-4 '> 
         
-        <div className=' flex flex-col gap-y-4 bg-richblack-800 rounded-lg border-2 border-richblack-500  p-6'>
-        <h1 className=' text-xl text-richblack-25 font-semibold '>Password</h1>
+        <div className=' flex flex-col gap-y-4 bg-richblack-800 rounded-lg border-2 border-richblack-500  pt-4 px-2 md:p-6'>
+             <h1 className=' text-xl text-richblack-25 font-semibold '>Password</h1>
               <div className=' w-full flex flex-row gap-x-4  relative  '>
 
                   <div className=' flex flex-col gap-2 w-full relative  '>

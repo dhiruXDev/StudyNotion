@@ -35,10 +35,10 @@ export const CourseTable = ({Courses,setCourses}) => {
   return (
     <div className=' relative border-[1.5px] border-richblack-800  rounded-md  mt-6 w-full '> 
           <Table className=' '>
-                <Thead className=' border-b-[1.5px]  border-richblack-800  '>
+                <Thead className=' border-b-[1.5px]  border-richblack-800  bg-richblack-700 '>
                       <Tr className=' flex justify-between items-center p-4 text-richblack-100 text-sm  font-medium font-inter select-none '>
                            <Td>COURSES</Td>
-                           <Td className='pl-[60%]'>DURATION</Td>
+                           <Td className='md:pl-[60%]'>DURATION</Td>
                            <Td>PRICE</Td>
                            <Td>ACTION</Td>
                       </Tr>
@@ -48,10 +48,10 @@ export const CourseTable = ({Courses,setCourses}) => {
                        {
                            Courses?.map((course)=>{
                             return(
-                                 <Tr key={course._id} className=' flex gap-x-10 p-4  mb-3  justify-between   w-full'>
-                                     <Td className=' flex  gap-x-4 justify-center w-[65%]  '>
-                                         <img  src={course?.thumbnail}  className=' h-[150px] w-[230px]  object-cover rounded-md'  />
-                                         <div className=' flex flex-col  justify-center gap-y-1 w-[calc(100%-230px)] '>
+                                 <Tr key={course._id} className=' flex   md:gap-x-10 p-4  mb-3  md:justify-between w-full'>
+                                     <Td className='  md:py-0 py-3 flex  gap-x-4 md:justify-center md:w-[65%]    '>
+                                         <img  src={course?.thumbnail}  className='  hidden md:!flex  md:h-[150px] md:w-[230px]  object-cover rounded-md'  />
+                                         <div className=' flex flex-col  -ml-16 md:ml-0 md:justify-center gap-y-1 md:w-[calc(100%-230px)] '>
                                                <p className=' text-base font-semibold font-inter text-richblack-100'>{course.courseName}{" "}:</p>   
                                                <p className=' text-richblack-400 text-sm  '>
                                                         {course?.courseDescription.length > 15 ?  
@@ -76,29 +76,29 @@ export const CourseTable = ({Courses,setCourses}) => {
                                          </div>
                                      </Td> 
                                    
-                                     <Td className=' pl-4  flex items-center justify-center text-richblack-200 font-semibold text-[14px] leading-[22px]'>
+                                     <Td className='  md:py-0  py-3 md:pl-4  flex items-center justify-center text-richblack-200 font-semibold text-[14px] leading-[22px]'>
                                           {/* <p>{course?.courseContent?.subSection?.timeDuration}</p> */}
                                           {course?.courseContent?.map((content, contentIndex) => (
-                                                <div key={contentIndex}>
+                                                <div key={contentIndex} className=' -ml-16 md:ml-0'>
                                                         {content?.subSection?.map((subSection, subIndex) => (
-                                                            <p key={subIndex}>{  subSection?.timeDuration  ? VideoDurationFormatter( subSection?.timeDuration ) :'No Duration'}</p>
+                                                            <p key={subIndex} >{  subSection?.timeDuration  ? VideoDurationFormatter( subSection?.timeDuration ) :'No Duration'}</p>
                                                         ))}
                                                 </div>
                                     ))}
                                      </Td>
-                                     <Td className='  flex items-center justify-center text-richblack-200 font-semibold text-[14px] leading-[22px]'>
-                                          <span>₹{course.price}</span>
+                                     <Td className=' md:py-0  py-3 flex items-center justify-center text-richblack-200 font-semibold text-[14px] leading-[22px]'>
+                                          <span className=' -ml-16 md:ml-0'>₹{course.price}</span>
                                      </Td>
-                                     <Td className='  pr-2 flex gap-x-2 items-center justify-center text-richblack-200 font-bold  text-xl   '>
+                                     <Td className='  pr-2 flex gap-x-10 md:gap-x-2 items-center justify-center text-richblack-200 font-bold  text-xl   '>
                                               <button
                                                  disabled= {loading}
                                                  onClick={()=>navigate(`/dashboard/edit-course/${course._id}`)}
-                                                 className=' hover:text-blue-200 duration-200'
+                                                 className=' hover:text-blue-200 duration-200  -ml-16 md:ml-0 '
                                               >
                                                 <MdEdit />   
                                               </button>
                                               <button   disabled={loading}
-                                                        className=' hover:text-blue-200 duration-200'
+                                                        className=' hover:text-blue-200 duration-200 md:ml-0 ml-5'
                                                         onClick={()=>setConfirmationmodalData({
                                                                   heading: "Do you want to delete this course ?", 
                                                                   discription: 'All data related to this course will be deleted',
@@ -109,11 +109,7 @@ export const CourseTable = ({Courses,setCourses}) => {
                                               })} >
                                                     <FaRegTrashAlt />
                                               </button>
-                                     </Td>
-                                   
-                                     
-                                     
-                                     
+                                     </Td>                                     
                                  </Tr>
                             )
                           })

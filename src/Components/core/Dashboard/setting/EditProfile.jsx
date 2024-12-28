@@ -39,8 +39,8 @@ export const EditProfile = () => {
      }
 
   return (
-    <form onSubmit={handleSubmit(submitHandler)} className='lg:w-[60%]'> 
-            <div className=' lg:w-[100%] bg-richblack-800 py-6 px-6 flex  flex-col gap-6 border-[1.6px] border-richblack-700 rounded-lg '>
+    <form onSubmit={handleSubmit(submitHandler)} className=' w-full lg:w-[60%]'> 
+            <div className=' w-full lg:w-[100%] bg-richblack-800 py-6 px-2 md:px-6 flex  flex-col gap-6 border-[1.6px] border-richblack-700 rounded-lg '>
                             <div>
                                 <h1 className=' text-lg font-semibold text-richblack-25'>Profile Information</h1>
                             </div>

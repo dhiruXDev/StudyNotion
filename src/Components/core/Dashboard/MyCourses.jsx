@@ -22,16 +22,16 @@ export const MyCourses = () => {
     },[]) ;
 
   return (
-    <div className=' flex flex-col  p-6  w-full  xl:w-[980px] '> 
+    <div className=' flex flex-col  py-4 px-3 md:p-6  w-full  xl:w-[980px] '> 
         
-         <div className=' w-[100%] flex flex-row justify-between space-x-40 font-inter '>
+         <div className=' w-[100%] flex flex-row justify-between md:space-x-40 font-inter '>
               <div className=' flex flex-col gap-y-2 pb-3'>
                     <span className=' text-base  text-richblack-400'>Home / Dashboard / <span className=' text-yellow-100'> course</span></span>
-                    <h1 className=' md:text-3xl text-richblack-25 '>My Courses</h1>
+                    <h1 className=' text-2xl md:text-3xl text-richblack-25 '>My Courses</h1>
               </div>
               <div>
-                  <IconBtn text={"Add course"} onClick={()=>navigate("/dashboard/add-course")} > 
-                    <BiPlusCircle />
+                    <IconBtn text={"Add course"} onClick={()=>navigate("/dashboard/add-course")} > 
+                         <BiPlusCircle />
                     </IconBtn>
               </div>
          </div>

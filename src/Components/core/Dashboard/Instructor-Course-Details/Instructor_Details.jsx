@@ -44,14 +44,14 @@ export const Instructor_Details = () => {
            </div>
 
            {
-                loading ? (<div className='spinner relative  mt-[17%]  mx-auto '> </div>)  : 
+                loading ? (<div className='spinner relative  md:mt-[17%] mt-[50%]  mx-auto '> </div>)  : 
                     courses.length > 0 ? 
                     ( <div className=' w-full relative mt-5  '>
-                              <div className=' w-full flex flex-row gap-x-5 '> 
+                              <div className=' w-full flex flex-col md:flex-row gap-x-5 '> 
                                       <div className=' bg-richblack-800 p-6 rounded-md w-full '>
                                             <Instructor_cart_details  courses={instructorData}/>
                                       </div>
-                                      <div className=' bg-richblack-800   rounded-md p-6  w-[45%]  flex flex-col   '>
+                                      <div className=' bg-richblack-800   rounded-md p-6 md:mt-0 mt-5  md:w-[45%]  flex flex-col   '>
                                           <h1 className=' text-xl text-richblack-25 font-semibold'>Statics</h1>
 
                                           <p className=' text-richblack-400 font-semibold mt-3'>Total Course</p>
@@ -71,7 +71,8 @@ export const Instructor_Details = () => {
                                         <p className=' text-xl  font-semibold'>Your Courses</p>
                                           <Link to={"/dashboard/my-course"} className=' text-yellow-100 text-sm font-semibold hover:text-yellow-200 duration-300'>View All</Link>
                                     </div>
-                                    <div className=' flex gap-x-3 px-6 mt-3 '> 
+                                    {/* This is for large size */}
+                                    <div className=' hidden md:!flex   gap-x-3 px-6 mt-3 '> 
                                         {
                                           courses.slice(0,4).map((course)=>(
                                             <div className=' flex flex-col gap-y-3 '>  
@@ -88,12 +89,31 @@ export const Instructor_Details = () => {
                                           ))
                                         }
                                     </div>
+                                        {/* This is for small size */}
+                                    <div className='md:hidden flex gap-x-3 px-6 mt-3 '> 
+                                        {
+                                          courses.slice(0,2).map((course)=>(
+                                            <div className=' flex flex-col gap-y-3 '>  
+                                                  <img src= {course.thumbnail} className=' h-[180px] w-[240px] object-cover aspect-square rounded-lg' />
+                                                  <div> 
+                                                      <h1 className=' text-richblack-100 font-medium text-sm'>{course.courseName}</h1>
+                                                      <div className=' flex gap-x-2  items-center text-richblack-300 text-xs font-semibold '>
+                                                          <p> {totalStudent} students </p>
+                                                          <p>|</p>
+                                                          <p>RS.{course.price}</p>
+                                                      </div>
+                                                  </div>
+                                            </div>
+                                          ))
+                                        }
+                                    </div>
+
                                 </div>
                     </div>
                     ) 
                     : ( 
                     <div className=' w-full relative mt-10 border-t-[1.7px]  border-richblack-800 pb-6'> 
-                        <h1 className=' mt-4    text-richblack-300  '>You have not Created Course Yet</h1>
+                        <h1 className=' mt-4    text-richblack-300  '>You have not Created Course Yet !</h1>
                           <Link to={'/dashboard/add-course'}  className='  text-blue-200  py-2  '>
                               Create Course
                           </Link>

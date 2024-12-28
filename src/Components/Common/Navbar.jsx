@@ -157,7 +157,7 @@ export const Navbar = () => {
                     isMenuVisible && <RxCross2 onClick={()=>{ setIsanimation(true); setTimeout(()=>{
                       setIsMenuVisible(false);
                       setIsanimation(false);
-                    } , 500)}} className=' animate-open-menu text-richblack-300 text-2xl cursor-pointer  hover:text-richblack-500 duration-100 transition-all ' />
+                    } , 500)}} className=' animate-open-menu text-richblack-300 text-2xl cursor-pointer      hover:text-richblack-500 duration-100 transition-all ' />
                  } 
            </div>
            </div>
@@ -166,7 +166,7 @@ export const Navbar = () => {
        </div>
               {
                   isMenuVisible && 
-                       <div className={`transition-all  duration-200  ${isMenuVisible && "animate-slide-down" } ${isanimation && "animate-slide-up"}  md:!hidden !flex items-center justify-center absolute   w-full overflow-visible z-[1000] h-auto pb-4 bg-richblack-800 border-b border-r-richblack-600`}>
+                       <div className={`transition-all  duration-200  ${isMenuVisible && "animate-slide-down" } ${isanimation && "animate-slide-up"}  md:!hidden !flex items-center justify-center absolute   w-full overflow-visible z-[10000] h-auto pb-4 bg-richblack-800 border-b border-r-richblack-600`}>
                              {/* <div className=' bg-richblack-500 blur-md  absolute  -z-[50] opacity-50  w-full h-full  '> jb</div> */}
                             <div className="flex flex-col items-center mt-5  gap-y-3 space-x-4 text-richblack-25">
                                   {NavbarLinks.map((links, index) => {

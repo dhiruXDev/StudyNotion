@@ -6,7 +6,7 @@ import { VscWhitespace } from 'react-icons/vsc';
 import "./gradeint.css"
 export const CodeBlocks = ( {heading ,subHeading , ctabtn1 , ctabtn2 , position,backgroundGradeint , codeColor,codeBlock }) => {
   return ( // 
-    <div className={`flex  ${position}   flex-col   my-1   mx-auto py-2 lg:py-6 px-10 lg:gap-14 gap-1   lg:justify-center lg:items-center  pl-[3rem]   lg:w-[88%] h-fit relative  `} > 
+    <div className={`flex  ${position}   flex-col overflow-y-hidden   my-1   mx-auto py-2 lg:py-6   px-2 ml-1 xs:px-10 lg:gap-14 gap-1   lg:justify-center lg:items-center   xs:pl-[3rem]   lg:w-[88%] h-fit relative    `} > 
 
           <div className='w-[100%] lg:w-1/2 flex flex-col gap-3  text-base relative   '>
                      {heading}
@@ -30,11 +30,10 @@ export const CodeBlocks = ( {heading ,subHeading , ctabtn1 , ctabtn2 , position,
                     </div>
           </div>
 
-          <div className='relative lg:w-1/2  max-xs:h-[320px]    w-[95%] py-20  '> 
-                <div  className={`${backgroundGradeint} absolute ${position === 'flex-row-reverse' ? 'left-[2rem] bottom-5' : 'left-[2rem] bottom-15'}`}></div>
-                 <div className=' code-border select-none flex flex-row    w-[100%] gap-0  py-2  px-2 sm:text-sm leading-[18px] sm:leading-6  text-xs lg:w-[410px] relative  '>
-                       
-                 <div className=' w-[10%]  text-center flex flex-col font-inter font-semibold text-richblack-300'>
+          <div className='relative lg:w-1/2  max-xs:h-[340px]    mt-6   w-[98%] pt-20 xs:py-20  '> 
+                <div  className={`${backgroundGradeint} absolute ${position === 'flex-row-reverse' ? ' left-[2rem] bottom-5' : ' left-[5%]    top-[24%] xs:top-14 xs:left-[2rem] xs:bottom-15'}`}></div>
+                 <div className='  h-[210px]  py-1 !overflow-y-hidden xs:h-auto code-border select-none flex flex-row  w-[100%] gap-0  xs:py-2  px-2 sm:text-sm leading-[18px] sm:leading-6  text-xs lg:w-[410px] relative  '>
+                 <div className=' w-[10%] text-center flex flex-col font-inter font-semibold text-richblack-300'>
                      <p>1</p>
                      <p>2</p>
                      <p>3</p>
@@ -47,7 +46,7 @@ export const CodeBlocks = ( {heading ,subHeading , ctabtn1 , ctabtn2 , position,
                      <p>10</p>
                      <p>11</p>
                  </div>
-                 <div className={` w-[90%] flex flex-grow flex-col font-mono font-bold ${codeColor} pr-3 ` } >
+                 <div className={` w-[99%] base:w-[90%]  flex flex-grow flex-col font-mono font-bold ${codeColor} pr-3 ` } >
                       <TypeAnimation  className=''
                            sequence={[codeBlock , 1000,""]}
                            repeat={Infinity}

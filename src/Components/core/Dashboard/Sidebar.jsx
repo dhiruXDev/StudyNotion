@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import { VscSignOut } from 'react-icons/vsc';
 import { IoMenu, IoClose } from 'react-icons/io5';
 import { ConfirmationModal } from '../../Common/ConfirmationModal';
-
+import { FaCircleArrowLeft } from "react-icons/fa6";
 export const Sidebar = () => {
   const { loading: profileLoading, user } = useSelector((state) => state.profile);
   const { loading: authnLoading } = useSelector((state) => state.auth);
@@ -49,29 +49,30 @@ export const Sidebar = () => {
     <>
       {/* Sidebar */}
       <div
-        className={`fixed top-[9%] ${
+        className={`absolute top-[0%] ${
           isOpen ? 'left-0' : '-left-full'
-        } md:relative md:left-0 z-50 flex flex-col min-h-[calc(100vh-3.8rem)] md:pt-10 w-[245px] bg-richblack-800 text-richblack-300 border-r-[2px] border-richblack-500 transition-all duration-300`}
+        } md:relative md:left-0 z-50 flex flex-col  overflow-visible min-h-[100%] md:pt-10 w-[245px] bg-richblack-800 text-richblack-300 border-r-[2px] border-richblack-500 transition-all duration-300 ease-in`}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       >
-        <div className="flex justify-between items-center p-4 md:hidden">
-          <button onClick={() => setIsOpen(false)} className="text-richblack-300 text-2xl">
-            <IoClose />
+        {/* <div className=' w-full h-full z-[100]  bg-richblack-700'></div> */}
+        <div className="flex justify-end items-center  -mr-5 z-[10000]  pt-4 md:hidden">
+          <button onClick={() => setIsOpen(false)} className={ ` ${!isOpen && "rotate-180"} text-richblack-200 text-2xl hover:bg-richblack-700 transition-transform transform rotate-0 px-2 py-2 rounded-full duration-100     `}>
+            <FaCircleArrowLeft />
           </button>
         </div>
         <div className="flex flex-col pb-8">
           {sidebarDataAndLinks.map((links) => {
             if ((links.type && user.accountType === links.type) || links.name === 'My Profile') {
-              return <SidebarLink key={links.id} links={links} IconName={links.icon} />;
+              return <SidebarLink setIsOpen={setIsOpen}  key={links.id} links={links} IconName={links.icon} />;
             }
             return null;
           })}
         </div>
         <div className="h-[1.5px] w-11/12 flex mx-auto bg-richblack-700"></div>
         <div className="flex flex-col py-5">
-          <SidebarLink links={{ name: 'Setting', path: 'dashboard/setting' }} IconName="VscSettingsGear" />
+          <SidebarLink  setIsOpen={setIsOpen}  links={{ name: 'Setting', path: 'dashboard/setting' }} IconName="VscSettingsGear" />
           <button
             onClick={() =>
               setConfirmationModalData({
@@ -96,7 +97,7 @@ export const Sidebar = () => {
       {/* Bottom Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed  top-[10%] right-4 md:hidden bg-richblack-800 text-richblack-300 p-3 rounded-full shadow-lg"
+        className="absolute  top-[1%] right-4 md:hidden bg-richblack-800 hover:bg-richblack-700 cursor-pointer text-richblack-300 p-3 rounded-full shadow-lg z-[1000]"
       >
         <IoMenu className="text-2xl" />
       </button>

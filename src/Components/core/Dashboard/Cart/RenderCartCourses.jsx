@@ -23,13 +23,13 @@ let cnt = cart[cart.length - 1];
          {
             cart?.map((course,index )=>{
                 return(
-                      <div key={index} className={` border-b-[1.5px] lg:${course === cnt  ? 'border-none' : ' border-b-[1.5px]'} w-full max-h-[360px] flex flex-row  gap-x-3  justify-between   px-6  py-6 border-richblack-700`}> 
-                             <div className='  w-[37%] '>
-                                        <img src={course?.thumbnail} alt='Course image'   className=' h-[150px]  w-[220px] object-cover  rounded-lg '  />
+                      <div key={index} className={` border-b-[1.5px] lg:${course === cnt  ? 'border-none' : ' border-b-[1.5px]'} w-full h-full md:max-h-[360px] flex flex-col md:flex-row  gap-x-3  justify-between   px-2  md:px-6  py-6 border-richblack-700`}> 
+                             <div className='  h-[310px] md:h-[150px] w-full md:w-[37%] '>
+                                        <img src={course?.thumbnail} alt='Course image'   className=' h-full md:h-[150px]  w-full md:w-[220px] object-cover  rounded-lg  '  />
                              </div>
-                             <div className = ' w-[calc(100%-230px)] flex flex-col gap-y-1 mt-2 '>
+                             <div className = ' w-full md:w-[calc(100%-230px)] flex flex-col gap-y-1 mt-2 '>
                                         {/* <h1>{course?.courseName}</h1> */}
-                                        <h1 className =' w-[88%] text-xl '>
+                                        <h1 className =' w-full md:w-[88%] text-xl '>
                                                       {
                                                       course?.courseDescription.length > 60 ? course?.courseDescription.split(" ").splice(0,10).join(" ")+"..."   :  course.courseDescription
                                                       }
@@ -52,12 +52,12 @@ let cnt = cart[cart.length - 1];
                                               <p className = ' text-richblack-300 font-[500] text-[14.5px]'>Total Courses • Lesson • Beginner</p> 
                                           </div>
                              </div>
-                             <div className='  w-[calc(100%-80%)] flex flex-col gap-y-3 text-white font-semibold'> 
-                                             <button onClick={()=>dispatch(removeFromCart(course._id))} className=' flex  items-center gap-x-2 bg-richblack-800 py-3  px-3 text-pink-300 hover:text-pink-100 duration-200  rounded-lg border-[1.5px] border-richblack-500 '> 
+                             <div className=' w-full  md:w-[calc(100%-80%)] flex flex-col gap-y-3 text-white font-semibold'> 
+                                             <button onClick={()=>dispatch(removeFromCart(course._id))} className=' flex  w-fit items-center gap-x-2 bg-richblack-800 py-3 text-center  px-5 md:px-3 text-pink-300 hover:text-pink-100 duration-200  rounded-lg border-[1.5px] border-richblack-500 '> 
                                                        <HiTrash className=' font-extrabold text-xl' />
                                                         <span className ='  text-base'>Remove</span> 
                                              </button>
-                                             <div  className='  '> 
+                                             <div  className=''> 
                                                   <p className=' text-3xl text-yellow-50 font-inter font-medium py-1'>RS.{RupeesFormatChanger(course?.price)}</p>
                                              </div>
                              </div>

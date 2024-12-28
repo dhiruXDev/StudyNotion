@@ -65,10 +65,10 @@ export const AskQComponent = () => {
     }
     
   return (
-    <div className='fixed   bottom-10   right-10 z-[1000]  overflow-hidden  ' > 
+    <div className='fixed    bottom-10  right-5  xs:right-10 z-[1000]  overflow-hidden  ' > 
          {
             !isVisible &&           
-                    <div  onClick={()=>{setIsvisible(true)}} className={`${!isVisible ? 'fade-in' : 'fade-out'} transition-all duration-200 ease-out relative min-h-[83px] cursor-pointer  `} >
+                    <div  onClick={()=>{setIsvisible(true)}} className={`${!isVisible ? 'fade-in' : 'fade-out'} transition-all duration-200 ease-out relative min-h-[95px] cursor-pointer  `} >
                         <div className=' flex gap-x-2  text-richblack-900  bg-caribbeangreen-300 py-1 px-1   rounded-tl-xl rounded-b-xl '>
                             <span className=' text-xl'>👋</span>
                             <span className=' pr-1'>

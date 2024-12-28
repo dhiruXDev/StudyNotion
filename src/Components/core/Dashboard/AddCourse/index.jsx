@@ -5,14 +5,14 @@ import { Link, useNavigate } from 'react-router-dom';
 export const AddCourse = () => {
       
   return (
-    <div className=' w-full p-6 flex flex-row gap-x-2  justify-between relative font-inter xl:pr-[10.5rem] '> 
-          <div className=' w-11/12 xl:w-[65%] flex flex-col gap-y-3 '>
+    <div className=' w-full px-2 py-4 md:p-6 flex flex-row gap-x-2  justify-between relative font-inter xl:pr-[10.5rem] '> 
+          <div className=' w-full md:w-11/12 xl:w-[65%] flex flex-col gap-y-3 '>
                     <div className='  flex flex-col gap-y-2' >   {/*   onClick={navigate("/dashboard/Instructor")}  */}
                             <div  className=' flex gap-x-1 items-center hover:text-richblack-400 duration-200 text-richblack-500 cursor-pointer'> 
                                 <FaAngleLeft className=' text-lg font-extralight' />
                                 <Link to={'/dashboard/instructor'}> <span>Back to Dashboard</span> </Link> 
                             </div>
-                            <h1 className=' text-xl font-thin '>Add your Courses</h1>
+                            <h1 className=' pl-1 md:pl-0 text-xl font-thin '>Add your Courses</h1>
                     </div> 
                     <RenderStep />
           </div>

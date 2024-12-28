@@ -81,16 +81,16 @@ export const Setting = () => {
     }, [imgFile])
 
     return (
-        <div className=' flex flex-col w-[100vw]  gap-3  px-[2rem] py-[1rem]  pb-14 justify-center font-inter'>
+        <div className=' flex flex-col w-[100vw]  gap-3  px-2 md:px-[2rem] py-[1rem]  pb-14 justify-center font-inter'>
             <div className=' flex flex-col gap-y-4  '>
                 <div className=' flex flex-row items-center gap-x-1 text-lg   group   text-richblack-400'>
                     <FaChevronLeft className=' cursor-pointer font-[200] text-sm' />
                     <span className=' cursor-pointer'  onClick={()=>{navigate("/dashboard/my-profile")}} >Back</span>
                 </div>
-                <h1 className=' text-richblack-5 text-[30px] leading-[22px] font-medium'>Edit Profile</h1>
+                <h1 className=' text-richblack-5 text-[30px]   pt-2 leading-[22px] font-medium'>Edit Profile</h1>
             </div>
 
-            <div className=' w-[80%]  m-auto flex flex-col gap-y-3 h-auto mt-[2rem]'>
+            <div className=' w-full md:w-[80%]  m-auto flex flex-col gap-y-3 h-auto mt-[2rem]'>
                 {/* Section 1 */}
                 <div className='lg:w-[60%] bg-richblack-800 py-6 px-3 flex  gap-6 items-center border-[1.6px] border-richblack-700 rounded-lg'>
                     <img src={ previewsourceImg || user?.image   } className=' w-[70px] aspect-square rounded-full  object-cover' />

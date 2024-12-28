@@ -71,7 +71,7 @@ useEffect(()=>{
                                     !video ? (
                                         <img src={previewSourse} alt={"preview"}  className=" relative rounded-md  object-cover  w-fit" />
                                     ) :(
-                                      <div style={{ width: "400px",   }}> {/* Set the desired width */}
+                                      <div className=' w-[280px] md:w-[400px]' > {/* Set the desired width */}
                                       <Player  aspectRatio="16:9"   playsInline src={previewSourse}   controls={false}    />
                                       {/* <button
                                             className="mt-2 text-xl text-white"

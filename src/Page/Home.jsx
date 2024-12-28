@@ -20,7 +20,7 @@ import { AskQComponent } from "./AskQComponent.jsx";
 export default function Home() {
     
       return (
-            <div className="  " >
+            <div className="  w-full " >
                   {/* Section 1   */}
                   <div className="lg:w-11/12 max-w-maxContent mx-auto flex flex-col gap-y-3   items-center  overflow-visible ">
                         <div className=" relative  bg-richblack-800  rounded-full py-2 px-4 mt-7 shadow-custom-white  transition-all duration-150 group hover:scale-95 cursor-pointer" >
@@ -30,20 +30,20 @@ export default function Home() {
                               </NavLink>
                         </div>
                         <div className=" mt-2 relative py-3 text-center   ">
-                              <p className=" base:text-[26px] md:text-4xl text-3xl  font-semibold font-inter text-richblack-5  "> Empower Your Future with <HighlightText text={`Coding Skills`} /> </p>
+                              <p className=" px- base:text-[26px] md:text-4xl text-3xl  font-semibold font-inter text-richblack-5  "> Empower Your Future with <HighlightText text={`Coding Skills`} /> </p>
                         </div>
-                        <div className=" relative  w-[70%] text-richblack-300 font-medium text-center">
-                              <p className=" text-[0.8rem]  md:text-[1.09rem] md:leading-[24px]  "> With our online coding courses, you can learn at your own pace, from anywhere in the world, and get access to a wealth of resources, including hands-on projects, quizzes, and personalized feedback from instructors.   </p>
+                        <div className=" relative  px-2  xs:w-[70%] text-richblack-300 font-medium text-center">
+                              <p className=" text-[0.6rem] xs:text-[0.8rem]  md:text-[1.09rem] md:leading-[24px]  "> With our online coding courses, you can learn at your own pace, from anywhere in the world, and get access to a wealth of resources, including hands-on projects, quizzes, and personalized feedback from instructors.   </p>
                         </div>
-                        <div className=" relative flex flex-col gap-x-6 mt-2 text-[12px]  base:flex-row ">
+                        <div className=" relative flex  gap-x-6 mt-0 xs:mt-2 text-[12px]  flex-row ">
                               <CTAbutton active={true} linkTo={'/signUp'} >Learn More</CTAbutton>
                               <CTAbutton active={false} linkTo={'/logIn'}> Book a Demo</CTAbutton>
                         </div>
                         {/* shadow-[-8px_-12px_20px]   shadow-blue-200  */}
                         {/* <div className=' absolute  md:h-[450px]  ml-4 mt-12 px-5 py-8 w-[39%] pb-[12rem] shadow-[5px_5px_70px_10px_#00C2FC] rounded-full z-10  translate-x-[5%]  translate-y-[70%] ' > </div> */}
                         {/* left-[31%] top-[50%] */}
-                        <div className="  relative  mt-6  px-10  py-24   max-w-max  max-h-max  z-50     flex items-center justify-center ">   {/*   Box shadow is added in talwind config  */}
-                                                                   <div className=" absolute homePagebackground translate-x-[25%] translate-y-[-70%]  "> </div>
+                        <div className="  relative   xs:mt-6  px-10  py-24   max-w-max  max-h-max  z-50     flex items-center justify-center ">   {/*   Box shadow is added in talwind config  */}
+                                                                   <div className=" absolute homePagebackground  translate-x-[25%] translate-y-[30%]  xs:translate-x-[25%] xs:translate-y-[-70%]  "> </div>
                                                                   <video muted autoPlay loop height={380} width={910}  className="    shadow-[12px_12px_0px_4px_rgba(255,255,255,1)]  z-50 "  >
                                                                         <source src={Banner} type="video/mp4" />
                                                                   </video> 
@@ -53,7 +53,7 @@ export default function Home() {
 
                         </div>
 
-                        <div  className=" flex  px-1  relative">
+                        <div  className=" flex  px-3  relative">
                               <CodeBlocks className='transition-all duration-400'
                                     heading={<p className=" text-4xl font-semibold font-inter text-richblack-5  "> Unlock your  <HighlightText text={`coding potential`} /> with our online courses. </p>}
                                     subHeading={<p className=" text-richblack-300">Our courses are designed and taught by industry experts who have years of experience in coding and are passionate about sharing their knowledge with you.</p>}
@@ -70,14 +70,14 @@ export default function Home() {
                                     }
                                     }
                                     position={"lg:flex-row"}
-                                    codeBlock={`<<!DOCTYPE html>\n<html>\nhead><title>Example</\n title><linkrel="stylesheet"href="styles.css">\nhead>\nbody>\nh1><ahref="/">Header</a>\n/h1>\nnav><ahref="one/">One</a><ahref="two/">Two<\n/a><ahref="three/">Three</a>\n/nav>`
+                                    codeBlock={`<<!DOCTYPE html>\n<html>\nhead><title>Example</\n title><linkrel="stylesheet"href="styles.css">\nhead>\nbody>\nh1><ahref="/">Header</a>\n/h1>\nnav><ahref="one/">One</a><ahref="two/">Two<\n/a><ahref="three/">Three</a>\nnav>`
                                     }
                                     backgroundGradeint={"codeblock1"}
                                     codeColor={"gradient-text"}
                               />
                         </div>
 
-                        <div className="  flex  px-1  relative">
+                        <div className="  flex  px-3  relative">
                               <CodeBlocks
                                     heading={<p className=" text-4xl font-semibold font-inter text-richblack-5  ">Start  <HighlightText text={`coding in seconds`} /> </p>}
                                     subHeading={<p className=" text-richblack-300">Go ahead, give it a try. Our hands-on learning environment means you'll be writing real code from your very first lesson.</p>}
@@ -94,7 +94,7 @@ export default function Home() {
                                     }
                                     }
                                     position={"lg:flex-row-reverse"}
-                                    codeBlock={`<!DOCTYPE html>\n<html>\nhead><title>Example</\ntitle><linkrel="stylesheet"href="styles.css">\nead>\nbody>\nh1><ahref="/">Header</a>\n/h1>\nnav><ahref="one/">One</a><ahref="two/">Two<\n/a><ahref="three/">Three</a>\n/nav>`
+                                    codeBlock={`<!DOCTYPE html>\n<html>\nhead><title>Example</\ntitle><linkrel="stylesheet"href="styles.css">\nead>\nbody>\nh1><ahref="/">Header</a>\n/h1>\nnav><ahref="one/">One</a><ahref="two/">Two<\n/a><ahref="three/">Three</a>\nnav>`
 
                                     }
                                     backgroundGradeint={"codeblock2"}
@@ -107,7 +107,7 @@ export default function Home() {
                   </div>
                   {/* Section 2 */}
                   <div className=" relative   lg:w-full   bg-pure-greys-5  w-full ">
-                        <div className="bg_home  bg-contain  h-[333px] flex flex-wrap gap-3  justify-center items-start  py-[8rem] z-30 relative  " >
+                        <div className="bg_home  bg-contain  h-[100px] base:h-[333px] flex flex-wrap gap-3  justify-center items-start  mt-5 base:mt-0 py-3 base:py-[8rem] z-30 relative  " >
                               <CTAbutton active={true} linkTo={"/signUp"} >
                                     <div className=" flex  items-center gap-2 font-inter font-bold ">
                                           Explore Full Catalog
@@ -164,10 +164,14 @@ export default function Home() {
 
                         </div>
                         {/* Reviews  */}
-                        <div className=" flex flex-col w-full  gap-y-5  items-center justify-center py-5 pb-8  ">
-                              <h1 className=" text-white font-semibold text-4xl max-[375px]:text-2xl  overflow-hidden pb-3"> Reviews From Others Learners</h1>
-                              <ReviewSlider />
-                        </div>
+
+                  <section className=' w-full lg:w-11/12 flex flex-col h-auto   mx-auto  lg:px-[4.5rem]  '>
+                              <div  className=' py-3  h-auto w-full lg:max-w-[100%] flex flex-col gap-y-6  '>
+                                    <h1 className='  text-richblack-25 text-3xl text-center py-3 font-semibold'> Reviews From Other Learners</h1>
+                                    <ReviewSlider  />
+                              </div>
+                  </section>
+
                   </div>
                   {/* Footer */}
                   <Footer />

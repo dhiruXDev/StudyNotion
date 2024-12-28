@@ -18,15 +18,11 @@ import {RupeesFormatChanger} from "../../../../utils/RupeesFormatChanger"
          console.log("Course is bought");
     }
     return (
-     <div className=' h-fit  w-[50%] lg:w-[20%] mt-4 ml-6 lg:ml-3 flex flex-col gap-y-2 text-richblack-5 bg-richblack-800  p-6 rounded-lg  border-[1.7px] border-richblack-700'> 
+     <div className=' h-fit  w-full mb-8 md:mb-0 md:w-[50%] lg:w-[20%] mt-4 md:ml-6 lg:ml-3 flex flex-col gap-y-2 text-richblack-5 bg-richblack-800  p-6 rounded-lg  border-[1.7px] border-richblack-700'> 
           <p className =' text-richblack-300  font-semibold text-base'>Total: </p>
           <h1 className =' text-yellow-50 text-3xl font-medium '>Rs.{RupeesFormatChanger(totalAmount)}</h1>   
           <del className=' text-richblack-300 text-sm'>Rs.{totalAmount + 220}</del>
-          <IconBtn  
-             text={"Buy Now"}
-             onClick={clickHandler}
-             customClasses={"w-full justify-center"}
-             />
+           
      </div>
    )
  }

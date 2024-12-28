@@ -85,7 +85,7 @@ export const EnrolledCourses = () => {
                                     <button onClick={()=>setPageType("completed") } className={`${pageType=='completed' ? " bg-richblack-900  text-richblack-5   rounded-full " : " bg-transparent text-richblack-300" }  py-2 px-5`}>Completed</button>
         </div>
       {/* 3rd part */}
-      <div className=' w-full lg:w-[1080px]  h-full flex flex-col gap-y-2 relative pr-5 '>
+      <div className=' w-full lg:w-[1080px]  h-full flex flex-col gap-y-2 relative md:pr-5 '>
           {
               !enrolledCourse ? ( <div className=' grid min-h-[calc(100vh-2.5rem)] place-items-center'>  
                                         <div className='spinner'> </div>
@@ -99,10 +99,10 @@ export const EnrolledCourses = () => {
                              <Table  className=''>
                                    <Thead className=' bg-richblack-700   rounded-t-lg  text-[14.5px] text-richblack-50'>
                                        <Tr className='  flex justify-between items-center text-richblack-50  py-5 px-3'>
-                                         <Td className='w-1/3'>Course Name</Td>
-                                         <Td className=' w-1/4'>Duration</Td>
-                                         <Td className='w-1/4'>Progress</Td>
-                                         <Td className='w-1/12'></Td>
+                                         <Td className=' md:w-1/3'>Course Name</Td>
+                                         <Td className=' md:w-1/4'>Duration</Td>
+                                         <Td className='md:w-1/4'>Progress</Td>
+                                         <Td className=' md:!flex !hidden md:w-1/12'></Td>
                                        </Tr>
                                    </Thead>
 
@@ -124,24 +124,24 @@ export const EnrolledCourses = () => {
                                              })
                                           }
                                           return(
-                                                 <Tr key={index} onClick={ ()=>navigate(`/view-course/${course._id}/section/${course.courseContent?.[0]._id}/sub-section/${course.courseContent?.[0].subSection?.[0]._id}`)} className=' cursor-pointer flex  justify-between  pl-5 pr-20 py-5 border-b-[1.5px] border-richblack-700 '>
-                                                      <Td className=' w-1/3'>
-                                                          <div className=' flex  items-center gap-x-2 '>
-                                                              <div  className=' w-24 h-14'>
+                                                 <Tr key={index} onClick={ ()=>navigate(`/view-course/${course._id}/section/${course.courseContent?.[0]._id}/sub-section/${course.courseContent?.[0].subSection?.[0]._id}`)} className=' cursor-pointer flex  justify-between  pl-5  pr-20 py-5 border-b-[1.5px] border-richblack-700 '>
+                                                      <Td className=' py-3 md:py-0 md:w-1/3'>
+                                                          <div className=' flex items-center gap-x-2 '>
+                                                              <div  className=' hidden md:!flex  md:w-24 h-14'>
                                                                   <img src={course?.thumbnail}   className=' h-full w-full  rounded-lg object-cover' />
                                                               </div>
                                                               <div className=' flex flex-col '> 
                                                                           <h2 className=' text-richblack-25 text-base'>{course.courseName}</h2>
-                                                                          <p className=' text-richblack-100 text-sm'>{course.courseDescription?.length > 20  ?  `${course.courseDescription?.slice(0,20)}...` :` ${course.courseDescription}` } </p>
+                                                                          <p className=' hidden md:!flex text-richblack-100 text-sm'>{course.courseDescription?.length > 20  ?  `${course.courseDescription?.slice(0,20)}...` :` ${course.courseDescription}` } </p>
                                                               </div>
                                                           </div>
                                                       </Td>
 
-                                                      <Td className=' w-1/4 text-richblack-25'>
+                                                      <Td className='  py-3 md:py-0 md:w-1/4 text-richblack-25'>
                                                            <p>{ VideoDurationFormatter(totaltime)}</p>   
                                                       </Td>
 
-                                                      <Td  className=' w-1/4'>
+                                                      <Td  className=' py-3 md:py-0 md:w-1/4'>
                                                             <div className=' flex flex-col gap-2'> 
                                                                   <p className=' text-sm text-richblack-50 font-medium'>Progress: {course.progress || 0}%</p>
                                                                   <ProgressBar  
@@ -156,8 +156,8 @@ export const EnrolledCourses = () => {
                                                       </Td>
                                                       
                                                       <Td onClick={(e)=>{showContextMenu(e) }}
-                                                                         className=' flex items-center  relative  hover:bg-richblack-800 rounded-full py-0.5 px-3'>
-                                                          <BsThreeDotsVertical className=' text-2xl text-center text-richblack-200 hover:text-richblack-50  cursor-pointer ' />
+                                                                         className='    flex items-center justify-center  relative   rounded-full py-0.5 px-3'>
+                                                          <BsThreeDotsVertical className=' text-2xl text-center text-richblack-200 hover:text-richblack-50   rounded-full px-2 py-2 w-fit h-fit hover:hover:bg-richblack-800   cursor-pointer ' />
                                                       </Td>
                                                       
                                                  </Tr>  

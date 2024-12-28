@@ -19,9 +19,9 @@ export const DeleteAccount = () => {
          }   
   }
   return (
-    <div  className=' lg:w-[60%] mt-2'> 
-           <div className=' w-full relative   p-6 flex flex-row gap-x-4 bg-pink-900 border-[1.5px] border-pink-400 rounded-lg '>
-                    <div className=' text-pink-200  italic bg-pink-700 w-[74px] max-h-[60px] flex items-center justify-center  aspect-square rounded-full  text-3xl'>
+    <div  className=' w-full lg:w-[60%] mt-2'> 
+           <div className=' w-full relative  py-4 px-2  md:p-6 flex flex-row gap-x-4 bg-pink-900 border-[1.5px] border-pink-400 rounded-lg '>
+                    <div className=' text-pink-200  italic bg-pink-700 w-[100px] md:w-[74px] h-[45px] md:max-h-[60px] flex items-center justify-center  aspect-square rounded-full  text-2xl md:text-3xl'>
                           <RiDeleteBin5Line />
                     </div>
                     <div className=' flex flex-col gap-y-1'>
