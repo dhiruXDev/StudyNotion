@@ -70,7 +70,7 @@ export const ChatContainer = () => {
                                 chatMessageData.length >= 2 &&  
                                 <div className=" flex flex-col  w-full "> 
                                         <div className=" flex items-center gap-x-1 text-richblack-600 text-[8px] ">
-                                            <div className=" w-[90px] h-[1.5px] bg-richblack-600 "></div>
+                                            <div className=" w-[99px] h-[1.5px] bg-richblack-600 "></div>
                                             <span className=" !text-[8px]">{FormatDate(Date.now()).split("|")[0]}</span>
                                             <div className=" w-[90px] h-[1.5px] bg-richblack-600"></div>
                                         </div>
