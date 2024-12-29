@@ -10,12 +10,12 @@ import notificationSoundPath  from "../Chat/notificationtune.mp3"
 import { FormatDate } from "../../utils/FormatDate";
 export const ChatContainer = () => {
             const { chatMessageData ,chatNotification} = useSelector((state) => state.chat);
-    
             const dispatch = useDispatch();
             const [userInput, setUserInput] = useState("");
             const PlayTune = new Audio(notificationSoundPath)
            
-            const handleDefaultSentMessage = async()=>{   
+            const handleDefaultSentMessage = async()=>{ 
+                setUserInput("Default_Question");  
                 console.log("User input ", userInput)
                 try {
                     const response = await chatCommunicating({userInput}) ;
@@ -70,21 +70,21 @@ export const ChatContainer = () => {
                                 chatMessageData.length >= 2 &&  
                                 <div className=" flex flex-col  w-full "> 
                                         <div className=" flex items-center gap-x-1 text-richblack-600 text-[8px] ">
-                                            <div className=" w-[30%] h-[1.5px] bg-richblack-600 "></div>
-                                            <span >{FormatDate(Date.now()).split("|")[0]}</span>
-                                            <div className=" w-[32%] h-[1.5px] bg-richblack-600"></div>
+                                            <div className=" w-[90px] h-[1.5px] bg-richblack-600 "></div>
+                                            <span className=" !text-[8px]">{FormatDate(Date.now()).split("|")[0]}</span>
+                                            <div className=" w-[90px] h-[1.5px] bg-richblack-600"></div>
                                         </div>
                                         <div className=" flex items-center justify-center  mt-3">
-                                            <span className=" text-richblack-500 text-[4px] ">Chat Started</span>
+                                            <span className=" text-richblack-500 text-base ">Chat Started</span>
                                         </div>
                                </div>
                              }
  
                                        {
                                                 chatMessageData?.map((message, index) => (
-                                                    <div key={index} className={`p-2  mb-1 max-w-max  ${message.type === "user"? "ml-auto bg-blue-500 text-white rounded-b-lg rounded-tl-lg ": "mr-auto bg-gray-200  "   }`}    >    
+                                                    <div key={index} className={`p-2  mb-1 max-w-max  ${message.type === "user"? "ml-auto bg-blue-500 text-white rounded-b-lg rounded-tl-lg ": "mr-auto bg-gray-200"   }`}    >    
                                                             {
-                                                                message.type == "user" ? ( <p className=" text-xs">{message.content}</p> ) : 
+                                                                message.type == "user" ? ( <p className="text-xs">{message.content}</p> ) : 
                                                                 ( 
                                                                             message?.content?.map((item)=>{
                                                                                 return(
@@ -94,36 +94,41 @@ export const ChatContainer = () => {
                                                                                         </div>
                                                                                         <div className=" flex flex-col  w-[290px]  gap-y-2"> 
                                                                                                 <h1  className=" text-sm  text-richblack-25">{item.heading}</h1>
-                                                                                                <div className="   flex  flex-wrap gap-2 ">
+                                                                                                <div className="flex  flex-wrap gap-2 ">
                                                                                                         {  
                                                                                                             item?.text?.map((option)=>{
                                                                                                                 return(
-                                                                                                                    <span  onClick={(e)=>{
-                                                                                                                                    e.preventDefault();
-                                                                                                                                    if(option?.split("&")[1] === ""){
-                                                                                                                                        handleSendMessage(e);
-                                                                                                                                    } 
-                                                                                                                    }}  
-                                                                                                                         className={`border-[1.5px]  border-richblack-700  ${option?.split("&")[1] === "" && "hover:bg-caribbeangreen-500 hover:border-caribbeangreen-500 hover:text-richblack-900"} text-richblack-500  duration-200  py-0.5 px-2 rounded-sm `}>
-                                                                                                                                <span className={` !text-[5px] ${option?.split("&")[1] === "" && "cursor-pointer"}  `}>{option?.split("&")[0]}</span> 
-                                                                                                                                {
-                                                                                                                                      option?.split("&")[1] &&  <a
-                                                                                                                                      onClick={(e) => {
-                                                                                                                                        if (!option?.split("&")[1]) {
-                                                                                                                                          e.preventDefault(); // Prevent navigation if the link is empty
-                                                                                                                                        }
-                                                                                                                                        handleDefaultSentMessage();
-                                                                                                                                      }}
-                                                                                                                                      href={option?.split("&")[1]}
-                                                                                                                                      target={option?.split("&")[1] ? "_blank" : ""}
-                                                                                                                                      rel="noopener noreferrer"
-                                                                                                                                      className="!text-[1px] text-blue-200 underline"
-                                                                                                                                    >
-                                                                                                                                      {option?.split("&")[1]}
-                                                                                                                                    </a>
-                                                                                                                                    
-                                                                                                                                }
+                                                                                                                    <span
+                                                                                                                    onClick={(e) => {
+                                                                                                                      if (option?.split("&")[1] === "") {
+                                                                                                                        e.preventDefault(); // Prevent navigation only if the link is empty
+                                                                                                                        handleSendMessage(e);
+                                                                                                                      }
+                                                                                                                    }}
+                                                                                                                    className={`border-[1.5px] border-richblack-700 ${
+                                                                                                                      option?.split("&")[1] === "" && "hover:bg-caribbeangreen-500 hover:border-caribbeangreen-500 hover:text-richblack-900"
+                                                                                                                    } text-richblack-500 duration-200 py-0.5 px-2 rounded-sm`}
+                                                                                                                  >
+                                                                                                                    <span
+                                                                                                                      className={`text-xs ${option?.split("&")[1] === "" && "cursor-pointer"}`}
+                                                                                                                    >
+                                                                                                                      {option?.split("&")[0]}
                                                                                                                     </span>
+                                                                                                                    {option?.split("&")[1] && (
+                                                                                                                      <a
+                                                                                                                        href={option?.split("&")[1]}
+                                                                                                                        target="_blank"
+                                                                                                                        rel="noopener noreferrer"
+                                                                                                                        className="!text-[10px] text-blue-200 underline"
+                                                                                                                        onClick={(e) => {
+                                                                                                                          handleDefaultSentMessage(); // Remove e.preventDefault() here
+                                                                                                                        }}
+                                                                                                                      >
+                                                                                                                        {option?.split("&")[1]}
+                                                                                                                      </a>
+                                                                                                                    )}
+                                                                                                                  </span>
+                                                                                                                  
 
                                                                                                                 )
                                                                                                             })
