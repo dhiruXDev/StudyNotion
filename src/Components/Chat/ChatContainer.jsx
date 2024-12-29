@@ -72,7 +72,7 @@ export const ChatContainer = () => {
                                         <div className=" flex items-center gap-x-1 text-richblack-600 text-[8px] ">
                                             <div className=" w-[99px] h-[1.5px] bg-richblack-600 "></div>
                                             <span className=" !text-[10px]">{FormatDate(Date.now()).split("|")[0]}</span>
-                                            <div className=" w-full h-[1.5px] bg-richblack-600"></div>
+                                            <div className=" w-[99px] h-[1.5px] bg-richblack-600"></div>
                                         </div>
                                         <div className=" flex items-center justify-center  mt-3">
                                             <span className=" text-richblack-500 text-base ">Chat Started</span>
