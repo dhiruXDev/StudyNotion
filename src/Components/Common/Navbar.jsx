@@ -189,8 +189,8 @@ export const Navbar = () => {
                                             {/* Dropdown menu */}
                                             {
                                                 isCatalogDropDownVisible &&   
-                                                    <div className="  absolute left-[70%] top-[28%] z-[5000] flex w-[200px] translate-x-[-50%] translate-y-[3em] flex-col rounded-lg bg-richblack-5 px-3 py-2 text-richblack-900   transition-all duration-200   overflow-visible  opacity-100 lg:w-[200px]">
-                                                      <div className="absolute bg-richblack-5 h-6 w-6 rounded rotate-45 translate-x-[25%] translate-y-[-80%] left-[10%] -z-10"></div>
+                                                    <div className="  absolute left-[70%] top-[28%] z-[5000] flex w-[200px] translate-x-[-50%] translate-y-[2.8em] flex-col rounded-lg bg-richblack-5 px-3 py-2 text-richblack-900   transition-all duration-200   overflow-visible  opacity-100 lg:w-[200px]">
+                                                      <div className="absolute bg-richblack-5 h-6 w-6 rounded rotate-45 translate-x-[25%] translate-y-[-70%] left-[10%] -z-10"></div>
                                                          {
                                                               loading ? (<div className=' text-xs'>Loading...</div> )  
                                                             : 
@@ -203,7 +203,8 @@ export const Navbar = () => {
                                                                     setIsCatalogDropDownVisible(false);
                                                                     setIsMenuVisible(false);
                                                                   }}
-                                                                  className="text-[5px] text-black bg-transparent hover:bg-richblack-200 py-1 px-2 font-inter font-[500] rounded-md cursor-pointer"
+                                                                  className="text-[14px] text-black bg-transparent   py-1 px-2 font-inter font-[500] rounded-md cursor-pointer"
+
                                                                 >
                                                                   {Element.name}
                                                                 </p>
