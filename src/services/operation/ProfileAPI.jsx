@@ -14,7 +14,7 @@ export const enrolledCourses =  async(token)=>{
           let result =[];
          // const toastId= toast.loading("Loading...");
           try {
-              const response= await apiConnector("GET",GET_ENROLLED_COURSES_API, {
+              const response= await apiConnector("GET",GET_ENROLLED_COURSES_API,null, {
                  Authorization : `Bearer ${token}`
               })
              console.log("RESPONSE OF FETcHING COURSE DETAILS .. " , response)
@@ -42,7 +42,7 @@ export const getInstructorDetailsWithStats = async(token)=>{
           // const toastId = toast.loading("Loading...");
           let result =[];
           try {
-            const response = await apiConnector("GET",GET_INSTRUCTOR_COURSE_WITH_STATUS_API , {
+            const response = await apiConnector("GET",GET_INSTRUCTOR_COURSE_WITH_STATUS_API ,null, {
                  Authorization : `Bearer ${token}`
             })
             //console.log( "resonse ", response);
