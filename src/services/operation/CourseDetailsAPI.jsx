@@ -273,7 +273,7 @@ export  const fetchInstructorAllCourse = async(token)=>{
      let res= [];
      try {
            const response = await apiConnector("GET",FETCH_INSTRUCTOR_ALL_COURSE_API,null,{
-                                                   Authorization:`Bearer ${token}`
+                                                   Authorization:`${token}`
            })     
            console.log( response)
            if(!response?.data?.success){
