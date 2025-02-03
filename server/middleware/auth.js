@@ -8,7 +8,7 @@ const jwt = require("jsonwebtoken")
                 //extract Token
                  const token = req.body.token ||
                                req.cookies.token || 
-                               req.header("Authorization").replace("Bearer "," ");
+                               req.header("Authorization").replace("Bearer ","");
                console.log("in backend Token is : " , token);
                 if (!token) {
                     return res.status(400).json({
