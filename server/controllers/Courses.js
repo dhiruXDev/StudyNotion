@@ -282,7 +282,7 @@ exports.getCourseDetails = async (req, res) => {
     // Get  method have no body , so when you will use "GET" method then , there should not be any sending any value , nhi to vo value req.body me ayega hi nhi . so you can change the Mehod if you want to send anything like courseId etc.
     //const  {courseId :{courseId}} = req.body;   //In backend i send {courseId : courseId} ,   {courseId} or courseId  --> both are method to extract the courseId from req body , but  first menas destructuring  and 2nd means req body is loaded with only courseId , there is not another value on req body.
     const  {courseId} = req.body;
-   // console.log("courseId is :", courseId);
+   console.log("courseId is :", courseId);
     const CourseDetails = await Course.findById({ _id: courseId })
       .populate(
         {
@@ -303,6 +303,7 @@ exports.getCourseDetails = async (req, res) => {
         }
       }
       ).exec();
+    console.log("1")
     // Validate the details
     if (!CourseDetails) {
       return res.status(400).json({
@@ -310,6 +311,7 @@ exports.getCourseDetails = async (req, res) => {
         message: `Couldn't find the course of courseId ${courseId}`
       })
     }
+    console.log("2")
    // console.log( "COurse --- > ",CourseDetails);
     return res.status(200).json({
       success: true,
