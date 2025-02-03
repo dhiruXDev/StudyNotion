@@ -1,0 +1,139 @@
+/* write your css here */
+ 
+*{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     overflow-x: hidden;
+}
+.bg_home{
+     background: url("../src/assets/image/bghome.svg");
+}
+.inputFile::-webkit-file-upload-button {
+     visibility: hidden;
+}
+
+
+
+
+/* --------------Custom Scrollbar css----------------------- */
+   body::-webkit-scrollbar {
+     width: 5px;  
+   }
+   
+   body::-webkit-scrollbar-track {
+     background: #000814;  
+   }
+   
+   body::-webkit-scrollbar-thumb {
+     background: #a9a8a8;      /* Dark gray for the scroll thumb */
+     border-radius: 25px;
+     width: 1px;
+     height: 80px;
+     transition: background-color 0.2s ease, width 0.3s ease; /* Smooth transitions */
+}
+body::-webkit-scrollbar-thumb:hover {
+     background: #555;      /* Dark gray hover effect for scroll thumb */
+}
+   
+ 
+
+
+/* Custom Scrollbar for Chrome, Edge, Safari */
+.custom-scrollbar::-webkit-scrollbar {
+     width: 8px; /* Width of vertical scrollbar */
+     height: 8px; /* Height of horizontal scrollbar */
+ }
+ 
+ .custom-scrollbar::-webkit-scrollbar-thumb {
+     background-color: #ffffff3b; /* Thumb color */
+     border-radius: 4px; /* Rounded edges */
+     transition: background-color 0.2s ease, width 0.3s ease; /* Smooth transitions */
+ }
+ 
+ .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+     background-color: #ffffff8b; /* Brighter color on hover */
+     width: 12px; /* Widen scrollbar for hover effect */
+ }
+ 
+ /* Custom Scrollbar for Firefox */
+ .custom-scrollbar {
+     scrollbar-color: #ffffff3b transparent; /* Thumb and track colors */
+     scrollbar-width: thin; /* Thin scrollbar */
+ }
+ 
+ /* Hide Scrollbar but Allow Scrolling */
+ .custom-scrollbar-hidden {
+     overflow: auto; /* Enable scrolling */
+     -ms-overflow-style: none; /* Hide scrollbar in IE/Edge */
+     scrollbar-width: none; /* Hide scrollbar in Firefox */
+ }
+ 
+ .custom-scrollbar-hidden::-webkit-scrollbar {
+     display: none; /* Hide scrollbar in Chrome, Safari, Edge */
+ }
+ 
+ /* Parent Container Overflow */
+ .custom-scrollbar-container {
+     overflow-y: auto; /* Enable vertical scrolling */
+     max-height: 300px; /* Example height for scrollbar visibility */
+ }
+ 
+
+
+ /* Opening the modal transition  */
+ .fade-in {
+    @apply opacity-0 translate-y-4; /* Initial state - hidden */
+    animation: fadeIn 0.3s ease-in forwards; /* Smooth fade-in */
+  }
+  
+  .fade-out {
+    @apply opacity-0 translate-y-4; /* Initial state - hidden */
+    animation: fadeOut 0.7s ease-in forwards; /* Smooth fade-out */
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0); /* Transition back to original position */
+    }
+  }
+  
+  @keyframes fadeOut {
+    to {
+      opacity: 0;
+      transform: translateY(-4rem); /* Move out of view */
+    }
+  }
+  
+
+  /* Bell animation */
+  .swing-animation {
+    animation: swing 0.4s ease-in-out 3 alternate; /* Swing effect */
+  }
+  
+  @keyframes swing {
+    0% {
+      transform: rotate(0deg); /* Initial state */
+    }
+    25% {
+      transform: rotate(10deg); /* First swing to the right */
+    }
+    50% {
+      transform: rotate(-10deg); /* Swing back to the left */
+    }
+    75% {
+      transform: rotate(10deg); /* Swing back to the right */
+    }
+    100% {
+      transform: rotate(0deg); /* Return to original position */
+    }
+  }
+  
+
+
+ 
+ 
+
+ 
+ 

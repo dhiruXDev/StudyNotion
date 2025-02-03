@@ -1,0 +1,16 @@
+import React from 'react'
+import { useSelector } from 'react-redux'
+import { Navigate } from 'react-router-dom';
+
+export const PrivateRoute = ({children}) => {
+         
+    const{token} = useSelector((state)=>state.auth);
+    // If anyOne is not loggedIn then firstly go and login
+    if (token !== null) {
+         return children
+    }
+    else{
+        return <Navigate to={"/logIn"} />
+    }
+ 
+}
