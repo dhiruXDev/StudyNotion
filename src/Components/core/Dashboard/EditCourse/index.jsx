@@ -16,6 +16,7 @@ import { RenderStep } from '../AddCourse/RenderStep';
     useEffect(()=>{
         setLoading(true);
             const populateCourseDetails = async()=>{
+             console.log("course Id in edit course",courseId);
                     const result =await getCourseDetails({courseId:courseId},token);
                     console.log( "result" ,result);
                     if (result) {
