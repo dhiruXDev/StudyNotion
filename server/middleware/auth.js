@@ -9,7 +9,7 @@ const jwt = require("jsonwebtoken")
                  const token = req.body.token ||
                                req.cookies.token || 
                                req.header("Authorization").replace("Bearer ","");
-               // console.log("in backend Token is : " , token);
+               console.log("in backend Token is : " , token);
                 if (!token) {
                     return res.status(400).json({
                         success :false,
