@@ -101,7 +101,7 @@ export const getCourseDetails = async ({courseId} ,token)=>{
         
         let result;
         try {
-               const response = await apiConnector("POST" , GET_COURSE_DETAILS_API ,{courseId},{
+               const response = await apiConnector("POST" , GET_COURSE_DETAILS_API ,{courseId.courseId},{
                                          Authorization : `Bearer ${token}`
                })
             console.log( "API RESPONSE OF FETCHINF ALL DATA OF SINGLE COURSE -- ",response);
