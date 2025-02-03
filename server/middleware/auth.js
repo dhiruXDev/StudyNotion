@@ -19,16 +19,20 @@ const jwt = require("jsonwebtoken")
                  
                 // validatiing the Token
                 try {
+                 console.log("before validation");
                     const decodedData = await jwt.verify(token , process.env.JWT_SECRET);
-                 //   console.log("JWT verification message: " , decodedData);
+                   console.log("JWT verification message: " , decodedData);
                     req.user = decodedData;
+                 console.log("after validation");
                 } catch (error) {
                     return res.status(400).json({
                         success :false,
                         message: "something Went Wrong during Token validating"
                     })
                 }
-               next();    
+             console.log("before next");
+               next();  
+             console.log("after next");
      
             } catch (error) {
                 return res.status(400).json({
