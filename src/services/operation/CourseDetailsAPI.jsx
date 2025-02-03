@@ -98,9 +98,10 @@ export const deleteCourse = async(courseId , token)=>{
 // Get course details crossponding their courseId
 export const getCourseDetails = async (courseId ,token)=>{
         console.log( "courseId " ,courseId)
+        const courseId = courseId.courseId;
         let result;
         try {
-               const response = await apiConnector("POST" , GET_COURSE_DETAILS_API ,{courseId:courseId},{
+               const response = await apiConnector("POST" , GET_COURSE_DETAILS_API ,{courseId},{
                                          Authorization : `Bearer ${token}`
                })
             console.log( "API RESPONSE OF FETCHINF ALL DATA OF SINGLE COURSE -- ",response);
