@@ -46,6 +46,7 @@ export function sendOTP(email ,navigate){
 export function signUp(email,firstName,lastName,password,confirmPassword,accountType,otp,navigate){
               return async(dispatch)=>{
                 //   const toastId = toast.loading("Loading...");
+                  console.log("otp",otp);
                   dispatch(setLoading(true));
                   try {  
                          const response = await apiConnector("POST" , SIGNUP_API,{
