@@ -98,8 +98,8 @@ export const deleteCourse = async(courseId , token)=>{
 // Get course details crossponding their courseId
 export const getCourseDetails = async ({courseId} ,token)=>{
         console.log( "courseId " ,courseId);
-        courseId = courseId.courseId;
-        console.log("new course id ",courseId);
+        // courseId = courseId.courseId;
+        // console.log("new course id ",courseId);
         
         let result;
         try {
