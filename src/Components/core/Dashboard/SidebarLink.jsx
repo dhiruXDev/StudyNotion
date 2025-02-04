@@ -13,7 +13,7 @@ export const SidebarLink = ({links, IconName ,setIsOpen}) => {
     }
 
   return (
-    <NavLink   to={links.path} onClick={link.path === "/dashboard/add-course" ? (()=>dispatch(resetCourseState())):null}
+    <NavLink   to={links.path} onClick={links.path === "/dashboard/add-course" ? (()=>dispatch(resetCourseState())):null}
         className={` ${matchRoute(links.path) ? " bg-yellow-800 border-l-[3px] border-yellow-200 text-yellow-25" : " bg-transparent hover:bg-richblack-700"}  py-3 relative px-2   duration-200 `}>
             {/* <span> border ke liye</span> */}
             <div onClick={()=>setIsOpen(false)} className=' flex gap-x-4 items-center font-medium pl-4'>
