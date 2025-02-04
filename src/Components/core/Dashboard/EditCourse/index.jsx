@@ -17,7 +17,7 @@ import { RenderStep } from '../AddCourse/RenderStep';
         setLoading(true);
             const populateCourseDetails = async()=>{
              console.log("course Id in edit course",courseId);
-                    const result =await getCourseDetails({courseId:courseId},token);
+                    const result =await getCourseDetails(courseId,token);
                     console.log( "result" ,result);
                     if (result) {
                          dispatch(setEditCourse(true));
