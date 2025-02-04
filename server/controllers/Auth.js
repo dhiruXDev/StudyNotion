@@ -43,7 +43,7 @@ exports.sendOTP = async (req , res) =>{
        const otpResponse =  await OTP.create({
         email,otp
        });
-//    console.log("OTP saved Response" ,otpResponse );
+   console.log("OTP saved Response" ,otpResponse );
        res.status(200).json({
         success : true,
         message : "OTP send succesfully and stored in DB",
@@ -73,6 +73,8 @@ exports.signUp = async(req , res) =>{
             accountType,
             otp
         } = req.body;
+
+        console.log("otp send by front",otp);
 // Validation of data
      if (!firstName || !lastName || !email || !password || !confirmPassword || !otp) {
         return res.status(401).json({
