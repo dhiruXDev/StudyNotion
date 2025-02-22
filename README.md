@@ -3,7 +3,9 @@
 StudyNotion is a dynamic and interactive educational platform that enables students to purchase courses and instructors to create and sell courses. Built with the MERN stack, it offers a seamless experience with features like payment integration, progress tracking, and a chatbot assistant for enhanced user interaction.
 
 ## 🚀 Live Demo
- (Click-here)[https://study-notion-nine-psi.vercel.app/]
+### Live Demo
+- [Live Demo](https://study-notion-nine-psi.vercel.app/)
+ 
 
 ---
 
@@ -47,9 +49,7 @@ StudyNotion is a dynamic and interactive educational platform that enables stude
 - Chatbot (AI-powered for user guidance)
 - Concurrently for seamless frontend-backend execution
 
----
-
----
+ 
 
 ## 🤝 Contributing
 Feel free to fork this repo and contribute! Open an issue or submit a PR. 🚀
