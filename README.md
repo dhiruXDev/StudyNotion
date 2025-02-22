@@ -1,31 +1,65 @@
-# React & Tailwind CSS Starter Pack
+# StudyNotion - Full-Stack E-Learning Platform
 
-This is a starter pack for creating React projects with Tailwind CSS configured. It uses React version **18.2** and Tailwind CSS version **3.2**.
+StudyNotion is a dynamic and interactive educational platform that enables students to purchase courses and instructors to create and sell courses. Built with the MERN stack, it offers a seamless experience with features like payment integration, progress tracking, and a chatbot assistant for enhanced user interaction.
 
-## Usage
+## 🚀 Live Demo
+[Click here to check out StudyNotion](#) (https://study-notion-nine-psi.vercel.app/)
 
-This starter pack includes a basic setup for using **Tailwind CSS with React**. To start building your own components and styles, follow these steps:
+---
 
-1. Clone the repository to your local machine.
-    ```sh
-    git clone https://github.com/thepranaygupta/react-tailwind-css-starter-pack.git
-    ```
+## 📌 Features
 
-1. Install the required packages.
-    ```sh
-    cd react-tailwind-css-starter-pack
-    npm install
-    ```
+### 🎓 For Students:
+- Browse and search courses across multiple categories.
+- Purchase courses securely with Razorpay integration.
+- Track progress and manage enrolled courses via a user-friendly dashboard.
+- Engage with an AI-powered **Chatbot** for instant course-related queries.
 
-1. Start the development server.
-    ```sh
-    npm start
-    ```
-1. Open the project in your browser at [`http://localhost:3000`](http://localhost:3000) to view your project.
-1. Create your React components and add your styles using Tailwind classes. You can also create new CSS files and import them into your components.
+### 👨‍🏫 For Instructors:
+- Create, manage, and upload courses with detailed sections and subsections.
+- Track sales and revenue through an intuitive dashboard.
+- Interact with students via course content.
 
-The project is set up to use `postcss-cli` to process your CSS files. You can add your own `tailwind.config.js` file to customize your Tailwind setup.
+### 🔥 Core Functionality:
+- Secure **user authentication & role-based access control** (Student/Instructor).
+- Responsive and modern UI for an optimized experience.
+- Payment gateway integration with **Razorpay**.
+- **Chatbot assistant** for enhanced user experience and guidance.
 
-## Contributing
+---
 
-Contributions are welcome! If you have any suggestions or find any issues, please feel free to open an issue or a pull request.
+## 🛠️ Tech Stack
+
+**Frontend:**
+- React.js, Redux Toolkit, React Router, Tailwind CSS
+- Swiper.js, Chart.js, React Hook Form
+- Emoji Picker, React Rating Stars, React Slick
+
+**Backend:**
+- Node.js, Express.js, MongoDB, Mongoose
+- JWT Authentication, bcrypt.js, Nodemailer
+- Cloudinary for media storage
+
+**Payment Integration:**
+- Razorpay
+
+**Other:**
+- Chatbot (AI-powered for user guidance)
+- Concurrently for seamless frontend-backend execution
+
+---
+
+---
+
+## 🤝 Contributing
+Feel free to fork this repo and contribute! Open an issue or submit a PR. 🚀
+
+---
+
+## 📜 License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+---
+
+### ⭐ Show Your Support!
+Give a ⭐ if you like this project!
